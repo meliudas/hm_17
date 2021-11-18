@@ -1,14 +1,15 @@
-def decator (func):
-    def inner(n):
+def decorator(func):
+    def inner(*args):
         print('Привет')
-        func(n)
+        func(*args)
         print('Конец функций')
 
     return inner
 
-def say(n):
-    print('3',)
+@decorator
 
+def sum(n):
+    n = n + 2
+    print(n)
 
-say = decator(say)
-say('')
+sum(1)
